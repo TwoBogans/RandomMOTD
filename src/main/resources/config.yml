@@ -1,0 +1,7 @@
+enabled: true
+motds:
+  - "This is default \nMOTD 1"
+  - "This is default \nMOTD 2"
+  - "This is default \nMOTD 3"
+  - "This is default \nMOTD 4"
+  - "This is default \nMOTD 5"

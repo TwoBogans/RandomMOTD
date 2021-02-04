@@ -1,0 +1,8 @@
+name: RandomMOTD
+version: ${project.version}
+main: com.github.anarchyplugins.randommotd.RandomMOTD
+prefix: RandomMOTD
+authors: [ RemainingToast ]
+commands:
+  randommotd:
+    aliases: ["rmotd", "motd"]
