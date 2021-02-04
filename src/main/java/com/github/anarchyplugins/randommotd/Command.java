@@ -15,7 +15,7 @@ public class Command implements CommandExecutor {
                     RandomMOTD.INSTANCE.saveDefaultConfig();
                     RandomMOTD.INSTANCE.reloadConfig();
                     int i = RandomMOTD.INSTANCE.getConfig().getStringList("motds").size();
-                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aSuccessfully loaded " + i + "MOTDs"));
+                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aSuccessfully loaded " + i + " MOTDs"));
                     return true;
                 }
             }
