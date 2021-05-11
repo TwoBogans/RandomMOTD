@@ -25,12 +25,12 @@ public class Command implements CommandExecutor {
                     case "add": {
                         if(args.length > 1){
                             StringBuilder sb = new StringBuilder();
-                            for(int i = 0; i < args.length; i++) {
-                                if (i > 0) sb.append(" ");
+                            for(int i = 1; i < args.length; i++) {
                                 sb.append(args[i]);
+                                sb.append(" ");
                             }
                             String MOTD = ChatColor.translateAlternateColorCodes('&', sb.toString());
-                            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aSuccessfully added MOTD: " + MOTD));
+                            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aSuccessfully added MOTD: &6" + MOTD));
                             RandomMOTD.MOTD_LIST.add(MOTD);
                         }
                     }
