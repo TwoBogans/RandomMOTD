@@ -12,28 +12,27 @@ public class Listener implements org.bukkit.event.Listener {
     @EventHandler(priority = EventPriority.HIGH)
     public void onPing(ServerListPingEvent e){
         if(RandomMOTD.INSTANCE.getConfig().getBoolean("enabled")){
-            Random random = new Random();
-            String motd = RandomMOTD.MOTD_LIST.get(random.nextInt(RandomMOTD.MOTD_LIST.size()));
-            StringBuilder sb = new StringBuilder();
 
-            if(!RandomMOTD.INSTANCE.getConfig().getString("prefix").isEmpty()){
-                sb.append(RandomMOTD.INSTANCE.getConfig().getString("prefix"));
-            }
+            String motd = RandomMOTD.MOTD_LIST.get(
+                    new Random().nextInt(RandomMOTD.MOTD_LIST.size())
+            );
 
-            int i2 = 0;
+            int cutOff = Math.min(motd.length(), 44);
 
-            for (int i = 0; i < motd.length(); i += 45) {
-                i2++;
-                sb.append(motd, i, Math.min(i + 45, motd.length()));
-                sb.append(" ");
-                sb.append(RandomMOTD.INSTANCE.getConfig().getString("suffix"));
-                if(i2 >= 2) break;
-            }
+            String prefix = RandomMOTD.INSTANCE.getConfig().getString("prefix");
+            String suffix = RandomMOTD.INSTANCE.getConfig().getString("suffix");
 
-            System.out.println(sb.toString());
+            String nonFormattedMOTD = prefix +
+                            motd.substring(0, cutOff) + suffix + ((
+                            motd.substring(cutOff).startsWith(" ")) ?
+                            motd.substring(cutOff).replaceFirst(" ", "") :
+                            motd.substring(cutOff)
+            );
+            String formattedMOTD = ChatColor.translateAlternateColorCodes('&', nonFormattedMOTD);
 
-            e.setMotd(ChatColor.translateAlternateColorCodes('&', sb.toString()));
+            RandomMOTD.INSTANCE.getServer().getConsoleSender().sendMessage("\n" + formattedMOTD);
+
+            e.setMotd(formattedMOTD);
         }
     }
-
 }
