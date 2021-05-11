@@ -1,7 +1,7 @@
 enabled: true
+prefix: "&7&o&l2B&6 "
+suffix: "\n&7&o&lAU&6 "
 motds:
-  - "This is default \nMOTD 1"
-  - "This is default \nMOTD 2"
-  - "This is default \nMOTD 3"
-  - "This is default \nMOTD 4"
-  - "This is default \nMOTD 5"
+  - "This is default MOTD 1"
+  - "This is default MOTD 2"
+  - "This is default MOTD 3"
