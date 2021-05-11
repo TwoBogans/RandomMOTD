@@ -28,6 +28,7 @@ public class Listener implements org.bukkit.event.Listener {
                             motd.substring(cutOff).replaceFirst(" ", "") :
                             motd.substring(cutOff)
             );
+
             String formattedMOTD = ChatColor.translateAlternateColorCodes('&', nonFormattedMOTD);
 
             RandomMOTD.INSTANCE.getServer().getConsoleSender().sendMessage("\n" + formattedMOTD);
