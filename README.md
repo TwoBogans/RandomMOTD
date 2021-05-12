@@ -1,3 +1,3 @@
 # RandomMOTD
 
-Download [Here](https://github.com/AnarchyPlugins/RandomMOTD/releases)
+Download [Here](https://github.com/2b2tau/RandomMOTD/releases)
