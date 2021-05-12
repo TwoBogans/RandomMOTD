@@ -38,8 +38,6 @@ public class Listener implements org.bukkit.event.Listener {
 
             String formattedMOTD = ChatColor.translateAlternateColorCodes('&', nonFormattedMOTD);
 
-            plugin.getServer().getConsoleSender().sendMessage("\n" + formattedMOTD);
-
             e.setMotd(formattedMOTD);
         }
     }
