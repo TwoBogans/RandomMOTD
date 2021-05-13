@@ -34,8 +34,10 @@ public class PingListener implements Listener {
 
             if (split.length == 1) {
                 nonFormattedMOTD = prefix + split[0] + "\n" + suffix;
-            } else if (split.length >= 2) {
+            } else if (split.length == 2) {
                 nonFormattedMOTD = prefix + split[0].substring(0, split[0].length() - 1) + "\n" + suffix + split[1];
+            } else if (split.length > 2) {
+                nonFormattedMOTD = prefix + split[0].substring(0, split[0].length() - 1) + "\n" + suffix + split[1].substring(0, split[1].length() - 1);
             } else {
                 nonFormattedMOTD = prefix + "\n" + suffix;
             }
@@ -45,6 +47,6 @@ public class PingListener implements Listener {
     }
 
     private String[] wrap(String str) {
-        return WordUtils.wrap(str, 44, null, true).split("\n");
+        return WordUtils.wrap(str, plugin.getConfig().getInt("wrap", 40), null, true).split("\n");
     }
 }
