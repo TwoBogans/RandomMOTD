@@ -42,12 +42,10 @@ public class Command implements CommandExecutor {
 
                             plugin.getConfig().set("motds", list);
                             plugin.saveConfig();
-
-                            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aSuccessfully added MOTD: &6" + motd));
-
                             plugin.saveDefaultConfig();
                             plugin.reloadConfig();
-                            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aSuccessfully loaded " + plugin.getConfig().getStringList("motds").size() + " MOTDs"));
+
+                            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aSuccessfully added MOTD: &6" + motd + "&r, &a" + plugin.getConfig().getStringList("motds").size() + " MOTDs loaded."));
                         }
                     }
                 }
