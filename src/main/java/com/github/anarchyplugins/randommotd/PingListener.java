@@ -23,26 +23,24 @@ public class PingListener implements Listener {
         if (plugin.getConfig().getBoolean("enabled")) {
             List<String> motdList = plugin.getConfig().getStringList("motds");
 
-            String motd = motdList.get(new Random().nextInt(motdList.size()));
-
-            String[] split = wrap(motd);
+            String[] split = wrap(motdList.get(new Random().nextInt(motdList.size())));
 
             String prefix = plugin.getConfig().getString("prefix");
             String suffix = plugin.getConfig().getString("suffix");
 
-            String nonFormattedMOTD;
+            String motd;
 
             if (split.length == 1) {
-                nonFormattedMOTD = prefix + split[0] + "\n" + suffix;
+                motd = prefix + split[0] + "\n" + suffix;
             } else if (split.length == 2) {
-                nonFormattedMOTD = prefix + split[0].substring(0, split[0].length() - 1) + "\n" + suffix + split[1];
+                motd = prefix + split[0].substring(0, split[0].length() - 1) + "\n" + suffix + split[1];
             } else if (split.length > 2) {
-                nonFormattedMOTD = prefix + split[0].substring(0, split[0].length() - 1) + "\n" + suffix + split[1].substring(0, split[1].length() - 1);
+                motd = prefix + split[0].substring(0, split[0].length() - 1) + "\n" + suffix + split[1].substring(0, split[1].length() - 1);
             } else {
-                nonFormattedMOTD = prefix + "\n" + suffix;
+                motd = prefix + "\n" + suffix;
             }
 
-            event.setMotd(ChatColor.translateAlternateColorCodes('&', nonFormattedMOTD));
+            event.setMotd(ChatColor.translateAlternateColorCodes('&', motd));
         }
     }
 
