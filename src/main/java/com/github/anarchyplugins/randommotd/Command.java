@@ -29,7 +29,7 @@ public class Command implements CommandExecutor {
                     }
                     case "add": {
                         if (args.length > 1) {
-                            String motd = ChatColor.translateAlternateColorCodes('&', String.join(" ", Arrays.asList(args).subList(1, args.length)));
+                            String motd = ChatColor.translateAlternateColorCodes('&', String.join(" ", Arrays.asList(args).subList(1, args.length))).replaceAll("\\s+$", "");
 
                             List<String> list = plugin.getConfig().getStringList("motds");
 

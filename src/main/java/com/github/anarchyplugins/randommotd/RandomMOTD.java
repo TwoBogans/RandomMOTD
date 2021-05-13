@@ -3,6 +3,7 @@ package com.github.anarchyplugins.randommotd;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class RandomMOTD extends JavaPlugin {
+
     @Override
     public void onEnable() {
         saveDefaultConfig();
