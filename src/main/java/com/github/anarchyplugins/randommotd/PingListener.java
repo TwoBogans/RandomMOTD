@@ -32,16 +32,12 @@ public class PingListener implements Listener {
 
             String nonFormattedMOTD;
 
-            switch (split.length) {
-                case 1:
-                    nonFormattedMOTD = prefix + split[0] + "\n" + suffix;
-                    break;
-                case 2:
-                    nonFormattedMOTD = prefix + split[0].substring(0, split[0].length() - 1) + "\n" + suffix + split[1];
-                    break;
-                default:
-                    nonFormattedMOTD = prefix + "\n" + suffix;
-                    break;
+            if (split.length == 1) {
+                nonFormattedMOTD = prefix + split[0] + "\n" + suffix;
+            } else if (split.length >= 2) {
+                nonFormattedMOTD = prefix + split[0].substring(0, split[0].length() - 1) + "\n" + suffix + split[1];
+            } else {
+                nonFormattedMOTD = prefix + "\n" + suffix;
             }
 
             event.setMotd(ChatColor.translateAlternateColorCodes('&', nonFormattedMOTD));
