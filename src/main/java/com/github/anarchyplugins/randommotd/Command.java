@@ -38,7 +38,7 @@ public class Command implements CommandExecutor {
                                 return true;
                             }
 
-                            list.add(motd);
+                            list.add(ChatColor.stripColor(motd));
 
                             plugin.getConfig().set("motds", list);
                             plugin.saveConfig();
