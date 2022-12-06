@@ -1,0 +1,4 @@
+name: RandomMOTD
+main: org.au2b2t.randommotd.RandomMOTD
+version: 1.0-SNAPSHOT
+author: RemainingToast

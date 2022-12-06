@@ -1,4 +1,4 @@
-package com.github.anarchyplugins.randommotd;
+package org.au2b2t.randommotd;
 
 import org.apache.commons.text.WordUtils;
 import org.bukkit.ChatColor;
