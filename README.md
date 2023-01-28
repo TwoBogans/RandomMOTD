@@ -1,1 +1,1 @@
-# https://donate.2b2t.com.au/
+# https://donate.2b2t.au/
